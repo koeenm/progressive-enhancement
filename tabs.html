@@ -9,24 +9,57 @@
 			/* Schrijf hier gewoon je CSS voor dit component */
 
 			/* Hint: kijk eens naar de :target selector */
+
+			section {
+				display: flex;
+				flex-direction: row;
+			}
+
+			details {
+				display: flex;
+				flex-direction: column;
+			}
+
+			summary {
+				display: inline-block;
+				width: fit-content;
+			}
+
+			div {
+				border: 2px solid black;
+				width: fit-content;
+				padding: 1em;
+				border-radius: 0.5em;
+				margin: 1em;
+			}
+
 		</style>
-		<script type="module">
-			/* Schrijf hier eventueel je client-side JavaScript */
-		</script>
+<script type="module">
+    document.querySelectorAll("details").forEach((details) => {
+        details.addEventListener("toggle", function(event) {
+            if (this.open) {
+                // Close other open details elements
+                document.querySelectorAll("details").forEach((otherDetails) => {
+                    if (otherDetails !== details && otherDetails.open) {
+                        otherDetails.open = false;
+                    }
+                });
+            }
+        });
+    });
+</script>
+
 	</head>
 	<body>
 		<h1>Tabbladen</h1>
 
-		<!-- Hint: vraag je af wat tabbladen eigenlijk zijn -->
+		
 
-		<!-- Content
 
-		Docenten
-		Sprints
-		Gedragscriteria
-		Open avond
-
-		<ol>
+		<section>
+			<details>
+			<summary>Docenten</summary>
+		<div><ol>
 			<li>Berat Zekaj</li>
 			<li>Charley Muhren</li>
 			<li>Cyd Stumpel</li>
@@ -38,7 +71,12 @@
 			<li>Sanne 't Hooft</li>
 			<li>Suus ten Voorde</li>
 		</ol>
+	</div>
+</details>
 
+<details>
+	<summary>Sprints</summary>
+	<div>
 		<ol>
 			<li>Your Tribe</li>
 			<li>The Client</li>
@@ -61,7 +99,11 @@
 			<li>Free Space</li>
 			<li>Final Sprint</li>
 		</ol>
-
+	</div>
+</details>
+<details>
+	<summary>Gedragscriteria</summary>
+	<div>
 		<ol>
 			<li>Methodisch handelen
 				<ol>
@@ -99,16 +141,21 @@
 				</ol>
 			</li>
 		</ol>
+	</div>
+</details>
+<details>
+	<summary>Open avond</summary>
+	<div>
+		<div>Open avond 16 april</div>
+		<div>Op de open dag proef je de sfeer en ontdek je hoe het is om aan de HvA te studeren. Je maakt kennis met studenten en docenten van de opleiding.</div>
+		<div>Stel je vragen over studiekeuze, studeren met een functiebeperking en toelating op het studiekeuzeplein. Heb je nog vragen over de opleiding? We staan tijdens de open dag/avond klaar om al jouw vragen te beantwoorden.</div>
+	</div>
+</details>
+	</section>
 
-		<p>Open avond 16 april</p>
-		<p>Op de open dag proef je de sfeer en ontdek je hoe het is om aan de HvA te studeren. Je maakt kennis met studenten en docenten van de opleiding.</p>
-		<p>Stel je vragen over studiekeuze, studeren met een functiebeperking en toelating op het studiekeuzeplein. Heb je nog vragen over de opleiding? We staan tijdens de open dag/avond klaar om al jouw vragen te beantwoorden.</p>
-
-		-->
-
-		<details open>
+		<details>
 			<summary>Demo video</summary>
-			<video src="assets/tabs.mp4" width="1298" height="505" controls muted autoplay loop>
+			<video src="assets/tabs.mp4" width="1298" height="505" controls muted autoplay loodiv>
 				<a href="assets/tabs.mp4">assets/tabs.mp4</a>
 			</video>
 		</details>

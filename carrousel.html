@@ -9,6 +9,48 @@
 			/* Schrijf hier gewoon je CSS voor dit component */
 
 			/* Hint: welk layout model is handig om content naast elkaar te zetten? */
+
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			section {
+				display: flex;
+				overflow-x: auto;
+				text-align: center;
+				scroll-snap-type: x mandatory;
+
+				blockquote {
+					height: 30em;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+
+				blockquote:nth-child(1n) {
+					background-color: var(--yellow);
+				}
+
+				blockquote:nth-child(2n) {
+					background-color: var(--purple);
+				}
+
+				blockquote:nth-child(3n + 1) {
+					background-color: var(--green);
+				}
+
+				p {
+					width: 80vw;
+					font-size: 3em;
+					font-weight: 900;
+					font-style: italic;
+				}
+			}
+
+			blockquote {
+				scroll-snap-align: center;
+			}
 		</style>
 		<script type="module">
 			/* Schrijf hier eventueel je client-side JavaScript */
@@ -17,23 +59,16 @@
 	<body>
 		<h1>Carrousel</h1>
 
-		<!-- Content
+		<section>
+			<blockquote><p>“Websites leren bouwen, én praktijkervaring opdoen?”</p></blockquote>
+			<blockquote><p>“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”</p></blockquote>
+			<blockquote><p>“Je werkt bij ons aan échte projecten voor échte opdrachtgevers”</p></blockquote>
+			<blockquote><p>“In het studiomodel werken studenten onder begeleiding van coaches en experts uit het vakgebied aan praktijkgerichte opdrachten”</p></blockquote>
+			<blockquote><p>“Bij FDND leer je websites bouwen en andere belangrijke skills die jij in de praktijk toe kan passen”</p></blockquote>
+			<blockquote><p>“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”</p></blockquote>
+		</section>
 
-		“Websites leren bouwen, én praktijkervaring opdoen?”
-
-		“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”
-
-		“Je werkt bij ons aan échte projecten voor échte opdrachtgevers”
-
-		“In het studiomodel werken studenten onder begeleiding van coaches en experts uit het vakgebied aan praktijkgerichte opdrachten”
-
-		“Bij FDND leer je websites bouwen en andere belangrijke skills die jij in de praktijk toe kan passen”
-
-		“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”
-
-		-->
-
-		<details open>
+		<details>
 			<summary>Demo video</summary>
 			<video src="assets/carrousel.mp4" width="1298" height="469" controls muted autoplay loop>
 				<a href="assets/carrousel.mp4">assets/carrousel.mp4</a>

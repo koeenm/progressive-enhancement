@@ -11,6 +11,17 @@
 			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
 
 			/* Hint: Kijk eens naar field-sizing */
+
+			input {
+				border: none;
+				border-radius: 1em;
+				height: 2em;
+			}
+
+			form {
+				background-color: var(--purple);
+				padding: 5em;
+			}
 		</style>
 	</head>
 
@@ -20,6 +31,23 @@
 		<form>
 
 			<!-- Hint: hoe kun je aan een invoerelement een lijst meegeven? -->
+
+			<label for="name-picker"></label>
+			<input type="text" name="name-picker" id="name-picker" list="picker" placeholder="Favorite">
+			<datalist id="picker">
+				<option value="Berat Zekaj"></option>
+				<option value="Charley Muhren"></option>
+				<option value="Cyd Stumpel"></option>
+				<option value="Dorien Drees"></option>
+				<option value="Joost Faber"></option>
+				<option value="Justus Sturkenboom"></option>
+				<option value="Koop Reijnders"></option>
+				<option value="Krijn Hoetmer"></option>
+				<option value="Sanne 't Hooft"></option>
+				<option value="Suus ten Voorde"></option>
+			</datalist>
+
+			<!-- op chrome werkt dit, maar firefox ondersteund dit niet goed, dus de dropdown met namen komt niet tevoorschijn -->
 
 			<!-- Een lijstje met docenten
 			Berat Zekaj
@@ -43,7 +71,7 @@
 
 		</form>
 
-		<details open>
+		<details>
 			<summary>Demo video</summary>
 			<video src="assets/pickers.mp4" width="749" height="417" controls muted autoplay loop>
 				<a href="assets/pickers.mp4">assets/pickers.mp4</a>
