@@ -16,37 +16,62 @@
 			}
 
 			details {
-				display: flex;
-				flex-direction: column;
-			}
-
-			summary {
-				display: inline-block;
-				width: fit-content;
-			}
-
-			div {
+				padding: 1em;
+				margin-block: 1em;
 				border: 2px solid black;
+				border-radius: 0.5em;
+				width: fit-content;
+				cursor: pointer;
+				font-weight: 500;
+				max-width: 50em;
+			}
+
+			details[open]:first-of-type div,
+			details[open]:first-of-type summary {
+				background: var(--purple);
+			}
+
+			details[open]:nth-of-type(2) div,
+			details[open]:nth-of-type(2) summary {
+				background: var(--green);
+			}
+
+			details[open]:nth-of-type(3) p,
+			details[open]:nth-of-type(3) summary {
+				background: var(--yellow);
+			}
+
+			details[open] {
+				border: none;
+				padding: 0;
+			}
+
+			details[open] div {
+				padding: 1em;
+				border-radius: 0 0.5em 0.5em 0.5em;
+				margin: 0;
+			}
+
+			details[open] summary {
+				border-radius: 0.5em 0.5em 0 0;
 				width: fit-content;
 				padding: 1em;
-				border-radius: 0.5em;
-				margin: 1em;
 			}
 
 		</style>
 <script type="module">
-    document.querySelectorAll("details").forEach((details) => {
-        details.addEventListener("toggle", function(event) {
-            if (this.open) {
-                // Close other open details elements
-                document.querySelectorAll("details").forEach((otherDetails) => {
-                    if (otherDetails !== details && otherDetails.open) {
-                        otherDetails.open = false;
-                    }
-                });
-            }
-        });
-    });
+    // document.querySelectorAll("details").forEach((details) => {
+    //     details.addEventListener("toggle", function(event) {
+    //         if (this.open) {
+    //             // Close other open details elements
+    //             document.querySelectorAll("details").forEach((otherDetails) => {
+    //                 if (otherDetails !== details && otherDetails.open) {
+    //                     otherDetails.open = false;
+    //                 }
+    //             });
+    //         }
+    //     });
+    // });
 </script>
 
 	</head>
@@ -116,7 +141,7 @@
 				<ol>
 					<li>Werkt in teams, vraagt begeleiding waar nodig en geeft feedback aan teamleden.</li>
 					<li>Draagt verantwoording voor eigen resultaten, verwerkt ontvangen feedback en wijst teamleden op hun verantwoording.</li>
-					<li>Identificeert diversiteit binnen teams en handelt respectvol naar anderen.</li>
+					<li>Identificeert persiteit binnen teams en handelt respectvol naar anderen.</li>
 				</ol>
 			</li>
 			<li>Communiceren
